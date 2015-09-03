@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Calendar.Factory.Context;
 using Calendar.Factory.Model;
 
@@ -17,7 +15,6 @@ namespace Calendar.Factory.Factory
                 return db.Events.ToList();
             }
         }
-        
         
         public static Event AddEvent(Event newEvent)
         {

@@ -1,24 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Calendar.Factory.Model;
 
 namespace Calendar.Client
 {
-    /// <summary>
-    /// Interaction logic for AddEvent.xaml
-    /// </summary>
     public partial class AddEvent : Window
     {
         private EventList parent;
@@ -36,8 +23,6 @@ namespace Calendar.Client
 
         private void AddEventClick_Click(object sender, RoutedEventArgs e)
         {
-            
-            
             Event newEvent = new Event();
 
             if (string.IsNullOrEmpty(AddTextBOx.Text ))
@@ -49,10 +34,7 @@ namespace Calendar.Client
             {
                 newEvent.Name = AddTextBOx.Text;
                 Labelwarning1.Visibility = Visibility.Hidden;
-
             }
-
-            
 
             if (DatePickerStart.SelectedDate == null)
             {
@@ -60,11 +42,9 @@ namespace Calendar.Client
                 return;
             }
             else
-
             {
                 newEvent.StartDate = DatePickerStart.SelectedDate.Value;
                 Labelwarning2.Visibility = Visibility.Hidden;
-
             }
 
             if (DatePickerEnd.SelectedDate == null)
@@ -76,9 +56,7 @@ namespace Calendar.Client
             {
                 newEvent.EndDate = DatePickerEnd.SelectedDate.Value;
                 Labelwarning3.Visibility = Visibility.Hidden;
-
             }
-
 
             if (!Factory.Factory.EventFactory.IsDatesExist(newEvent.StartDate, newEvent.EndDate, null))
             {

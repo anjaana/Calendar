@@ -1,26 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Calendar.Factory.Model;
 
 namespace Calendar.Client
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class EventList : Window
     {
         private AddEvent addEventForm;
@@ -34,7 +18,6 @@ namespace Calendar.Client
 
             addEventForm = new AddEvent(this);
             editEventForm = new EditEvent(this);
-
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)

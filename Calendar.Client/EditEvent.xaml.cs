@@ -1,24 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Calendar.Factory.Model;
 
 namespace Calendar.Client
 {
-    /// <summary>
-    /// Interaction logic for EditEvent.xaml
-    /// </summary>
     public partial class EditEvent : Window
     {
         private Event currentEvent;
@@ -37,8 +24,6 @@ namespace Calendar.Client
             }
         }
 
-        
-
         public EditEvent(EventList parent)
         {
             this.parent = parent;
@@ -47,9 +32,7 @@ namespace Calendar.Client
 
             DatePickerStart.DisplayDateStart = DateTime.Now;
             DatePickerEnd.DisplayDateStart = DateTime.Now;
-            
         }
-
 
         public void UpdateForm()
         {
@@ -73,7 +56,6 @@ namespace Calendar.Client
             else
             {
                 EditLabel.Visibility = Visibility.Hidden;
-
             }
 
             UpdateEvent();
