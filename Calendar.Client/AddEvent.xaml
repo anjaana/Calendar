@@ -1,0 +1,31 @@
+﻿<Window x:Class="Calendar.Client.AddEvent"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Add Event" Height="373" Width="589">
+    <Grid Margin="0,0,-8,-4">
+        <TextBox Name="AddTextBOx" MaxLength="50" HorizontalAlignment="Left" Height="29" Margin="140,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="27,67,0,0" VerticalAlignment="Top" Height="56" Width="86" FontSize="15"/>
+        <Label Content="Start Date" HorizontalAlignment="Left" Margin="27,128,0,0" VerticalAlignment="Top" Height="55" Width="86" FontSize="15"/>
+        <Label Content="End Date" HorizontalAlignment="Left" Margin="27,190,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.483,0.615" Height="54" Width="86" FontSize="15"/>
+        <DatePicker Name="DatePickerStart"  HorizontalAlignment="Left" Margin="140,129,0,0" VerticalAlignment="Top" Height="26" Width="148" SelectedDateChanged="DatePicker_SelectedDateChanged">
+            <DatePicker.Resources>
+                <Style TargetType="DatePickerTextBox">
+                    <Setter Property="IsReadOnly" Value="True"/>
+                </Style>
+            </DatePicker.Resources>
+        </DatePicker>
+        <DatePicker Name="DatePickerEnd" HorizontalAlignment="Left" Margin="140,190,0,0" VerticalAlignment="Top" Height="28" Width="148" SelectedDateChanged="DatePicker_SelectedDateChanged">
+        <DatePicker.Resources>
+            <Style TargetType="DatePickerTextBox">
+                <Setter Property="IsReadOnly" Value="True"/>
+            </Style>
+        </DatePicker.Resources>
+            </DatePicker>
+        <Button Name="AddEventClick" Content="Add event" HorizontalAlignment="Left" Margin="113,297,0,0" VerticalAlignment="Top" Width="75" Click="AddEventClick_Click"/>
+        <Button Content="Close" HorizontalAlignment="Left" Margin="270,297,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Label Content="Field is required !" Name="Labelwarning1" Visibility="Hidden"   HorizontalAlignment="Left" Margin="319,67,0,0" VerticalAlignment="Top" Height="54" Width="150" Background="Transparent" Foreground="#FFF70404"/>
+        <Label Content="Field is required !" Name="Labelwarning2" Visibility="Hidden"  HorizontalAlignment="Left" Margin="319,129,0,0" VerticalAlignment="Top" Height="54" Width="150" Background="Transparent" Foreground="#FFF90303"/>
+        <Label Content="Field is required ! "  Name="Labelwarning3" Visibility="Hidden"  HorizontalAlignment="Left" Margin="319,190,0,0" VerticalAlignment="Top" Height="54" Width="150" Background="Transparent" Foreground="#FFF90707"/>
+
+    </Grid>
+</Window>

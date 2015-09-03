@@ -1,0 +1,45 @@
+﻿<Window x:Class="Calendar.Client.EventList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Calendar" Height="497.369" Width="799.269">
+    <Grid Margin="0,0,-8,-1">
+        <Calendar Name="Cevents" HorizontalAlignment="Left" Margin="45,44,0,0" VerticalAlignment="Top" Height="173" Width="192" SelectionMode="MultipleRange">
+            <Calendar.CalendarDayButtonStyle>
+                <Style TargetType="CalendarDayButton" BasedOn="{StaticResource {x:Type CalendarDayButton}}">
+                    <Style.Triggers>
+                        <Trigger Property="IsBlackedOut" Value="True">
+                            <Setter Property="Background" Value="#FF548AE8"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Calendar.CalendarDayButtonStyle>
+        </Calendar>
+        <DataGrid x:Name="DgEvents" HorizontalAlignment="Left" Margin="259,44,0,0" 
+                  VerticalAlignment="Top" Height="215"  
+                  ItemsSource="{Binding}" AutoGenerateColumns="False"
+                  CanUserAddRows="False" CanUserDeleteRows="False" Width="502">
+            <DataGrid.Columns>
+                <DataGridTextColumn IsReadOnly="True" Header="Name" Binding="{Binding Path=Name}"  Width="200"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Start Date" Binding="{Binding StartDate, StringFormat=\{0:dd.MM.yyyy\}}"  Width="100"/>
+                <DataGridTextColumn IsReadOnly="True" Header="End Date" Binding="{Binding EndDate, StringFormat=\{0:dd.MM.yyyy\}}"  Width="100"/>
+                <DataGridTemplateColumn Width="50">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="EditEvent_Click">Details</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="50">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="DeleteEvent_Click">Delete</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Add event" HorizontalAlignment="Left" Margin="45,239,0,0" VerticalAlignment="Top" Width="75" Click="btnAdd_Click"/>
+
+    </Grid>
+</Window>
